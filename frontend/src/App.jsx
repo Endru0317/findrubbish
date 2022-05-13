@@ -1,14 +1,12 @@
-import Home from "@pages/Home";
+import AddRubbish from "@pages/AddRubbish.jsx";
 
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <Home />
-      <p>coucou</p>
+      <AddRubbish />
     </div>
   );
 }
-
 export default App;
