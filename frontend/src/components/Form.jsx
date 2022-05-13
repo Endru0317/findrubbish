@@ -12,12 +12,17 @@ export default function App() {
   function submitRubbish(event) {
     event.preventDefault();
     const data = { address, email, image };
-    axios.post("http://localhost:5000/upload", data);
+    axios.post("http://localhost:5000/upload", data); /* .then((response) => {
+      
+    }); */
   }
 
   function handleTakePhoto(dataUri) {
     setImage(dataUri);
   }
+  axios.get("http://localhost:5000/data").then((response) => {
+    console.log(response);
+  });
   return (
     <div className="form-container">
       <form className="register-form">
