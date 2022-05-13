@@ -10,8 +10,10 @@ import {
   Marker,
   Popup,
   useMapEvents,
+  useMap,
 } from "react-leaflet";
 import "../App.css";
+import { usePosition } from "use-position";
 
 function LocationMarker() {
   const [position, setPosition] = useState(null);
@@ -29,15 +31,34 @@ function LocationMarker() {
     </Marker>
   );
 }
-
-const AddRubbish = () => {
-  const [address, setAddress] = React.useState("");
+export default function AddRubbish() {
+  const [address, setAddress] = React.useState([
+    52.51603777910612, 13.405505675340931,
+  ]);
   const [describe, setDescribe] = React.useState("");
   const [image, setImage] = React.useState("");
 
+  const getLocation = (e) => {
+    e.preventDefault();
+    if (!navigator.geolocation) {
+      console.log("Geolocation is not supported by your browser");
+    } else {
+      console.log("Locating...");
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          console.log(null);
+          setAddress([position.coords.latitude, position.coords.longitude]);
+          console.log(position.coords.latitude, position.coords.longitude);
+        },
+        () => {
+          console.log("Unable to retrieve your location");
+        }
+      );
+    }
+  };
   function submitRubbish(event) {
     event.preventDefault();
-    const data = { address, email, image };
+    const data = { address, display_name: describe, image };
     axios.post("http://localhost:5000/upload", data); /* .then((response) => {
       
     }); */
@@ -46,14 +67,33 @@ const AddRubbish = () => {
   function handleTakePhoto(dataUri) {
     setImage(dataUri);
   }
+  function ChangeMapView({ coords }) {
+    const map = useMap();
+    map.setView(coords, map.getZoom());
+
+    return null;
+  }
+
   return (
     <div className="map-page">
       <div className="form-container">
         <form className="register-form">
-          <MapContainer center={[51.505, -0.09]} zoom={13}>
+          <MapContainer center={address} zoom={13}>
             <TileLayer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png" />
-            <LocationMarker />
+            <ChangeMapView coords={address} />
+            <Marker position={address}>
+              <Popup>
+                <div>YOUR LOCATION</div>
+              </Popup>
+            </Marker>
           </MapContainer>{" "}
+          <button
+            className="form-field"
+            type="submit"
+            onClick={(e) => getLocation(e)}
+          >
+            GET CURRENT LOCATION
+          </button>
           <Camera
             onTakePhoto={(dataUri) => {
               handleTakePhoto(dataUri);
@@ -77,6 +117,4 @@ const AddRubbish = () => {
       {/* <Form /> */}
     </div>
   );
-};
-
-export default AddRubbish;
+}

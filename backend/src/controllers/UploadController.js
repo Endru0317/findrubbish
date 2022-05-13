@@ -2,10 +2,10 @@ const fs = require("fs");
 
 class UploadController {
   static upload = (req, res) => {
-    fs.readFile("data.json", (err, data) => {
+    fs.readFile("rubbishData.json", (err, data) => {
       var json = JSON.parse(data);
       json.push(req.body);
-      fs.writeFile("data.json", JSON.stringify(json), function (err) {
+      fs.writeFile("rubbishData.json", JSON.stringify(json), function (err) {
         if (err) {
           res.status(500).send(err);
         }
@@ -15,7 +15,7 @@ class UploadController {
   };
 
   static data = (req, res) => {
-    fs.readFile("data.json", "utf8", (err, data) => {
+    fs.readFile("rubbishData.json", "utf8", (err, data) => {
       if (err) {
         console.log(err);
         res.status(500).send(err);
