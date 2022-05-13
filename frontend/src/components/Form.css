@@ -1,5 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
-
+.react-html5-camera-photo > img,
+.react-html5-camera-photo > video {
+  width: 100% !important;
+}
 body {
   background: #76b852;
   display: flex;

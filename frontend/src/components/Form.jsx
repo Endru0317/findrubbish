@@ -1,8 +1,8 @@
 import React from "react";
-import "./Form.css";
 import Camera from "react-html5-camera-photo";
 import "react-html5-camera-photo/build/css/index.css";
-/* import axios from "axios"; */
+import axios from "axios";
+import "./Form.css";
 
 export default function App() {
   const [address, setAddress] = React.useState("");
@@ -11,17 +11,18 @@ export default function App() {
 
   function submitRubbish(event) {
     event.preventDefault();
-    const test = [address, email, image];
-    test.push(1);
-    /* 
-    console.log(image);
-    console.log(address);
-    console.log(email); */
+    const data = { address, email, image };
+    axios.post("http://localhost:5000/upload", data); /* .then((response) => {
+      
+    }); */
   }
 
   function handleTakePhoto(dataUri) {
     setImage(dataUri);
   }
+  axios.get("http://localhost:5000/data").then((response) => {
+    console.log(response);
+  });
   return (
     <div className="form-container">
       <form className="register-form">
