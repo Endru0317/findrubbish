@@ -15,7 +15,7 @@ app.use(
   })
 );
 
-app.use(express.json());
+app.use(express.json({ limit: 50000000 }));
 app.use(express.static(path.join(__dirname, "../public")));
 
 // load router
