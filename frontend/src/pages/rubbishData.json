@@ -1,0 +1,79 @@
+[
+  {
+    "place_id": 567505,
+    "lat": "52.5170365",
+    "lon": "13.3888599",
+    "img": "",
+    "display_name": "Berlin Oranian Strase, 10117, Germany"
+  },
+  {
+    "place_id": 281709287,
+    "lat": "52.506934799999996",
+    "lon": "13.397482681501469",
+    "img": "",
+    "display_name": "Berlin Mitte potsdame platz 3461, Germany"
+  },
+  {
+    "place_id": 42758681,
+    "lat": "52.5103817",
+    "lon": "13.4349112",
+    "img": "",
+    "display_name": "Berlin Ostbahnhof, Mitteltunnel, Friedrichshain, Friedrichshain-Kreuzberg, Berlin, 10243, Germany"
+  },
+  {
+    "place_id": 23999622,
+    "lat": "51.5663927",
+    "lon": "6.8260849",
+    "img": "",
+    "display_name": "Neuköln, Sterkrade, Oberhausen, North Rhine-Westphalia, 46147, Germany"
+  },
+  {
+    "place_id": 3843218,
+    "lat": "51.4864178",
+    "lon": "6.9497454",
+    "img": "",
+    "display_name": "Neuköln, Levinstraße, Borbeck-Mitte, Stadtbezirk IV, Essen, North Rhine-Westphalia, 45356, Germany"
+  },
+  {
+    "place_id": 328701355,
+    "lat": "53.4324372",
+    "lon": "9.8444656",
+    "img": "",
+    "display_name": "Brandenberge, Neu Wulmstorf, Harburg, Lower Saxony, 21149, Germany"
+  },
+  {
+    "place_id": 2321,
+    "lat": 52.5206906827098,
+    "lon": 13.397253309553058,
+    "img": "",
+    "display_name": "Brandenberge, Neu Wulmstorf, Harburg, Lower Saxony, 21149, Germany"
+  },
+  {
+    "place_id": 2323221,
+    "lat": 52.46897847830085,
+    "lon": 13.37032077778636,
+    "img": "",
+    "display_name": "Bezirk Tempelhof-Schöneberg, 21149, Germany"
+  },
+  {
+    "place_id": 232651,
+    "lat": 52.49872646230909,
+    "lon": 13.406030965017324,
+    "img": "",
+    "display_name": "Kreuseberg Admiralbrücke 21149, Germany"
+  },
+  {
+    "place_id": 232651,
+    "lat": 52.495173188079185,
+    "lon": 13.516580893009435,
+    "img": "",
+    "display_name": "HTW Berlin University of Applied Sciences 21149, Germany"
+  },
+  {
+    "place_id": 232651,
+    "lat": 52.51032485978197,
+    "lon": 13.34766609577773,
+    "img": "",
+    "display_name": "Zoologischer Garten Berlin 21149, Germany"
+  }
+]
