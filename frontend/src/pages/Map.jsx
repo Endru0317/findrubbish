@@ -1,10 +1,25 @@
 import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { Link } from "react-router-dom";
-import rubbishData from "./rubbishData.json";
 import "../App.css";
+import axios from "axios";
 
-const Map = () => {
+export default function Map() {
+  const [rubbishData, setRubbishData] = React.useState([]);
+  const [loaded, setLoaded] = React.useState(false);
+  axios
+    .get("http://localhost:5000/data")
+    .then((response) => {
+      // handle success
+      setRubbishData(response.data);
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    })
+    .then(function () {
+      // always executed
+    });
   return (
     <div className="map-page">
       <article className="information">
@@ -14,7 +29,7 @@ const Map = () => {
         environment is greatly changed into a simplified human environment.
         hence beaver dams, and the works of mound-building termites, are thought
         of as natural.
-        <Link to="/addlocation">
+        <Link to="/addrubbish">
           <button className="add-rubbish">Add Rubbish Location </button>
         </Link>
       </article>
@@ -24,7 +39,7 @@ const Map = () => {
         zoom={13}
         scrollWheelZoom={true}
       >
-        <Link to="/addlocation">
+        <Link to="/addrubbish">
           <button className="add-rubbish">Add Rubbish Location </button>
         </Link>
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
@@ -41,5 +56,4 @@ const Map = () => {
       </MapContainer>
     </div>
   );
-};
-export default Map;
+}

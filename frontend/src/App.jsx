@@ -14,7 +14,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="map" element={<Map />}></Route>
-            <Route path="addlocation" element={<AddRubbish />}></Route>
+            <Route path="addrubbish" element={<AddRubbish />}></Route>
           </Routes>
         </div>
       </div>

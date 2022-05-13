@@ -1,5 +1,5 @@
 import React from "react";
 const Home = () => {
-  return <div></div>;
+  return <div> FRONT PAGE</div>;
 };
 export default Home;
