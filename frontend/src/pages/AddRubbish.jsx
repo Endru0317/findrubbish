@@ -62,6 +62,7 @@ export default function AddRubbish() {
     axios.post("http://localhost:5000/upload", data); /* .then((response) => {
       
     }); */
+    alert("Rubbish submitted");
   }
 
   function handleTakePhoto(dataUri) {
